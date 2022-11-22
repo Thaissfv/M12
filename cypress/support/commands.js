@@ -43,6 +43,4 @@ Cypress.Commands.add('adicionarProdutos', (pagina, produto, tamanho, cor, quant)
     cy.get('.single_add_to_cart_button').click()
     cy.get('.woocommerce-message').should('contain', 'foram adicionados no seu carrinho.')
 
-
-
 })
