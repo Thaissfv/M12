@@ -10,11 +10,22 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         E validando minha compra ao final */
 
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
     });
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        //fazer login
+        //fazer login 
+        cy.get('#username').type("aluno_ebac@ebac.com")
+        cy.get('#password').type("teste@teste.com")
+        cy.get('.woocommerce-form > .button').click()
+
+        // acessar a loja e escolher e adicionar produtos 4x
+
+        //fazendo checkout
+
+        // validando compra
+
+
 
         // escolher e adicionar produtos 4x
 
