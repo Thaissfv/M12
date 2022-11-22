@@ -1,33 +1,30 @@
 /// <reference types="cypress" />
 
+const login = require('../fixtures/perfil.json')
+const produtos = require('../fixtures/produtos.json')
+
+
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
-    /*  Como cliente 
-        Quero acessar a Loja EBAC 
-        Para fazer um pedido de 4 produtos 
+    /*  Para fazer um pedido de 4 produtos 
         Fazendo a escolha dos produtos
         Adicionando ao carrinho
         Preenchendo todas opções no checkout
         E validando minha compra ao final */
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('/minha-conta/')
     });
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        //fazer login 
-        cy.get('#username').type("aluno_ebac@ebac.com")
-        cy.get('#password').type("teste@teste.com")
-        cy.get('.woocommerce-form > .button').click()
 
-        // acessar a loja e escolher e adicionar produtos 4x
+        //fazer login (COLOCAR AQUI UMA VARIÁVEL PARA ACESSAR O USUARIO QUE EU QUISER)
+        cy.login(login.usuario, login.senha)
 
-        //fazendo checkout
+        // Depois de acessar, agora deve-se adicionar os produtos 4x
+        //var prod1 = '0'
+        cy.adicionarProdutos(produtos.pagina, produtos.produto, produtos.tamanho, produtos.cor, produtos.quant)
+        //cy.adicionarProdutos(produtos[prod1].produto, produtos[prod1].tamanho, produtos[prod1].cor, produtos[prod1].quant)
 
-        // validando compra
-
-
-
-        // escolher e adicionar produtos 4x
 
         //fazendo checkout
 
