@@ -1,5 +1,16 @@
-{
+[{
   "usuario": "miguel@ebac.com",
   "senha": "miguel@M12.com"
+},
+
+{
+  "usuario": "aluno_ebac@teste.com",
+  "senha": "teste@teste.com"
+},
+
+{
+  "usuario": "teste_ebac65@ebac.com",
+  "senha": "teste@teste.com"
 }
 
+]
