@@ -29,8 +29,7 @@ Cypress.Commands.add('login', (usuario, senha) => {
     cy.get('#username').type(usuario)
     cy.get('#password').type(senha)
     cy.get('.woocommerce-form > .button').click()
-    cy.get('.page-title').should ('contain', 'Minha conta')
-   
+      
 })
 
 Cypress.Commands.add('adicionarProdutos', (pagina, produto, tamanho, cor, quant) => {
@@ -41,8 +40,7 @@ Cypress.Commands.add('adicionarProdutos', (pagina, produto, tamanho, cor, quant)
     cy.get('.button-variable-item-'+ cor).click()
     cy.get('.input-text').clear().type(quant)
     cy.get('.single_add_to_cart_button').click()
-    cy.get('.woocommerce-message').should('contain', 'foram adicionados no seu carrinho.')
-
+    
 })
 
 Cypress.Commands.add('checkout', (nome, sobrenome, pais, rua, cidade, estado, cep, fone, email) => {
@@ -60,6 +58,5 @@ Cypress.Commands.add('checkout', (nome, sobrenome, pais, rua, cidade, estado, ce
     cy.get('#payment_method_cod').click()
     cy.get('#terms').click()
     cy.get('#place_order').click()
-    cy.get('.woocommerce-notice').should('contain', 'Obrigado. Seu pedido foi recebido.')
-
+  
 })
